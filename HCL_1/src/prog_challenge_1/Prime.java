@@ -7,7 +7,7 @@ public class Prime {
 
 	public Queue<Integer> IsItPrime(Queue<Integer> input) {
 		Queue<Integer> result = new PriorityQueue<Integer>();
-		int i, j, x, count = 0;
+		int i, j, x = 0;
 
 		for (i = 0; i < input.size(); i++) {
 			x = input.poll();
@@ -15,15 +15,15 @@ public class Prime {
 			if (x == 1)
 				result.add(x);
 			else {
-				for (j = 1; j <= x; j++) {
+				for (j = 2; j <= x; j++) {
 					if (x % j == 0) 
-						count++;
+						break;
 				}
-				if (count == 2)
+				if (x == j)
 					result.add(x);
-				count = 0;
 			}
 		}
 		return result;
 	}
+
 }
