@@ -15,7 +15,7 @@ public class Randomizer {
 			number = (int) (Math.random() * ((max - min) + 1) + min);
 			random.add(number);
 			count++;
-		} while (count <= 100);
+		} while (count <= max);
 		
 		clone = random;
 		return sample.IsItPrime(random);
